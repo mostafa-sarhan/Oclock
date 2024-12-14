@@ -1,0 +1,144 @@
+
+:root{
+    --color1:#FFFFAA;
+    --color3:#081B29;
+}
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+html {
+    overflow: hidden;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    background-color: var(--color3);
+    overflow: hidden;
+}
+
+.hero {
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.hero .number_hours{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color:var(--color3);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.hero .number_hours span {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transform: rotate(calc(var(--index) * 30deg));
+    text-align: center;
+
+}
+.hero .number_hours span p {
+    font-size: 50px;
+    transform: rotate(calc(var(--index) * -30deg));
+    color: var(--color1);
+    text-shadow: 0 0 10px var(--color1);
+}
+
+
+
+/* ----------------------------------- */
+.hero .line{
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    /* border: 1px solid #fff; */
+    display: flex;
+    justify-content: center;
+    align-items: start;
+}
+.hero .line i {
+    position: absolute;
+    width: 8px;
+    height: 50%;
+    background-color: var(--color1);
+    transform-origin: bottom;
+    box-shadow: 0 0 10px var(--color1);
+    border-radius: 50%;
+}
+.hero .hours {
+    width: 50%;
+    height: 280px;
+}
+.hero .minutes {
+    width: 350px;
+    height: 350px;
+}
+.hero .seconds i{
+    background-color: #fff;
+    box-shadow: none;
+}
+.hero .dots {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #fff;
+    position: relative;
+}
+/* --------------------- */
+.hero .bar_seconds {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.hero .bar_seconds span {
+    position: absolute;
+    transform: rotate(calc(var(--index) * 6deg));
+    text-align: center;
+    inset: -20px;
+}
+.hero .bar_seconds span:nth-child(5n) p{
+    width: 5px;
+    height: 15px;
+    transform: translateY(2px);
+}
+.hero .bar_seconds span p {
+    display: inline-block;
+    width: 2px;
+    height: 12px;
+    background: var(--color1);
+}
+
+
+@media (max-width: 768px){
+    .hero {
+        width: 300px;
+        height: 300px;
+    }
+    .hero .hours {
+        width: 50%;
+        height: 160px;
+    }
+    .hero .minutes {
+        width: 250px;
+        height: 200px;
+    }
+    .hero .seconds {
+        width: 270px;
+        height: 270px;
+    }
+}
